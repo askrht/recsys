@@ -44,11 +44,11 @@ round(tail(head(sort(sapply(wratings[,-1], relationWithStarWars, wratings[,"V3.1
 # Advance: ((x and y) / x) / ((!x and y) / !x)
 zratings = wratings
 zratings[is.na(zratings)] <- 0
-advanceRelation <- function(x, base) {
+lift <- function(x, base) {
   xbase = x & base
   xnotbase = x & !base
    (length(xbase[xbase == TRUE]) / length(base[base>0])) / (length(xnotbase[xnotbase == TRUE]) / length(base[base==0]))
 }
-round(tail(head(sort(sapply(zratings[,-1], advanceRelation, zratings[,c("V3.11")], simplify=TRUE),decreasing = TRUE),6),-1),2)
-rm(mratings,wratings,zratings)
+round(tail(head(sort(sapply(zratings[,-1], lift, zratings[,c("V3.11")], simplify=TRUE),decreasing = TRUE),6),-1),2)
+# rm(mratings,wratings,zratings)
 
