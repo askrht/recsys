@@ -3,7 +3,7 @@ Introduction to Recommender Systems Coursera Online Course
 
 #### Description of Files
 
-1.	hw1.R contains all the source required to calculate recommendations
+1.	hw1.R contains all the code required to calculate recommendations
 
 
 #### Preparation
